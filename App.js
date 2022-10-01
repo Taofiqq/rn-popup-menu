@@ -1,11 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from "react-native";
+import CustomMenu from "./components/CustomMenu";
+import ScrollViewMenu from "./components/ScrollViewMenu";
+import SimpleMenu from "./components/SimpleMenu";
+import SlideInMenu from "./components/SlideInMenu";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      {/* <SimpleMenu /> */}
+      {/* <CustomMenu /> */}
+      {/* <ScrollViewMenu /> */}
+      <SlideInMenu />
     </View>
   );
 }
@@ -13,8 +18,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
   },
 });
