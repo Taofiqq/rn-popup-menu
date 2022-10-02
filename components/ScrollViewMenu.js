@@ -24,10 +24,10 @@ const ScrollViewMenu = () => {
           <Entypo name="dots-three-vertical" size={24} color="black" />
         </MenuTrigger>
         <MenuOptions>
-          <FlatList
+          {/* <FlatList
             data={data}
             keyExtractor={(item) => item.id}
-            style={{ height: 400 }}
+            style={{ height: 200 }}
             renderItem={({ item }) => (
               <MenuOption
                 onSelect={() => alert(item.name)}
@@ -43,16 +43,24 @@ const ScrollViewMenu = () => {
                 <Text>{item.icon}</Text>
               </MenuOption>
             )}
-          />
-          {/* <ScrollView style={{ height: 200 }}>
+          /> */}
+          <ScrollView style={{ height: 200 }}>
             {data.map((item) => (
               <MenuOption
                 key={item.key}
-                onSelect={() => alert(item.value)}
-                text={item.value}
-              />
+                customStyles={{
+                  optionWrapper: {
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                  },
+                }}
+              >
+                <Text>{item.name}</Text>
+                <Text>{item.icon}</Text>
+              </MenuOption>
             ))}
-          </ScrollView> */}
+          </ScrollView>
         </MenuOptions>
       </Menu>
     </MenuProvider>
@@ -64,8 +72,12 @@ export default ScrollViewMenu;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
     marginVertical: 200,
     marginHorizontal: 100,
+  },
+  scroll: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
 });
